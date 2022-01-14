@@ -9,7 +9,7 @@ public:
     friend ostream& operator<< (ostream &out, const extrabigint &ebi);
     friend istream& operator>> (istream &in, extrabigint &ebi);
 
-    void ebi_print(string spliter=""){
+    void ebi_print(string spliter=""){//очень плохое название
         extrabigint a=*this;
         int u=a.index_unzero_claster(a);
         if(a.claster[u]>0){
@@ -36,13 +36,13 @@ public:
         }
     }
 
-    void ebiabs(){
+    void ebiabs(){//еще одно плохое название
         for(int i=0;i<(*this).r;++i){
             (*this).claster[i]=abs((*this).claster[i]);
         }
     }
 
-    void neg(){
+    void neg(){//хачу киндер пингви, злой EXTRABIGINT++ такой
         for(int i=0;i<(*this).r;++i){
             (*this).claster[i]=-abs((*this).claster[i]);
         }
@@ -95,7 +95,7 @@ private:
 
     int r=37;
     int*n=&r;
-    long long*claster=new long long[*n];
+    long long*claster=new long long[*n];//самая большая моя ошибка
 
     int index_unzero_claster(extrabigint a){
         for(int i=0;i<a.r;i++){
@@ -104,7 +104,7 @@ private:
         return -1;
     }
 
-    int strlen(extrabigint a){
+    int strlen(extrabigint a){//надо так было для общего благополучия
         a.ebiabs();
         string as="";
         for(int i=index_unzero_claster(a);i<a.r;++i){
@@ -116,7 +116,7 @@ private:
         return as.length()-a.r+index_unzero_claster(a)+1;
     }
 
-    void init(string a){
+    void init(string a){//я смотрел репортаж рен-тв во время создания этой функции
         int l=a.length();
         for(int i=l-1,sc=0,pos=(*this).r-1;i>-1;--i,++sc){
             (*this).claster[pos]+=(a[i]-'0')*pow(10,sc);
@@ -127,15 +127,15 @@ private:
         }
     }
 
-    void upper_zeroing(long long*lst,int times){
+    void upper_zeroing(long long*lst,int times){//нулями все заполняется для того, чтобы не было ошибок
         for(int i=0;i<times;++i)lst[i]=0;
     }
 
-    void del_upper_zeroing(long long*lst){
+    void del_upper_zeroing(long long*lst){// чтобы были ошибки
         for(int i=*n;i>0;--i)if(lst[i]!=000000000000000000){*n=i+1;break;}
     }
 
-    extrabigint check(extrabigint a){
+    extrabigint check(extrabigint a){//основная функция для отладки архитектуры
         long long t=pow(10,18);
         for(int i=index_unzero_claster(a);i<a.r;++i){
             if(a.claster[i]>999999999999999999){a.claster[i-1]+=a.claster[i]/t;a.claster[i]%=t;}
@@ -154,7 +154,7 @@ private:
         return a;
     }
 
-    string sign_map(extrabigint a){
+    string sign_map(extrabigint a){//знаковость разрядов кластера
         string map="";
         for(int i=0;i<a.r;i++){
             if(a.claster[i]>0)map+='+';
@@ -166,7 +166,7 @@ private:
 
     
 
-    extrabigint plus(extrabigint a,extrabigint b){
+    extrabigint plus(extrabigint a,extrabigint b){//плюс ушел в плюс, минус больше не нужен
         bool minu=0;
         if(b.claster[b.r-1]<0&&a.claster[a.r-1]<0){
             minu=1;
@@ -180,7 +180,7 @@ private:
         return a;
     }
 
-    char compare(extrabigint a,extrabigint b){
+    char compare(extrabigint a,extrabigint b){//Компадро камбочо
         a.ebiabs();b.ebiabs();
         if(index_unzero_claster(a)>index_unzero_claster(b))return '>';
         if(index_unzero_claster(a)<index_unzero_claster(b))return '<';
@@ -193,13 +193,13 @@ private:
         return '=';
     }
 
-    extrabigint minus(extrabigint a,extrabigint b){
+    extrabigint minus(extrabigint a,extrabigint b){//минус ушел в минус, все в плюсе
         if((a==b)){upper_zeroing(a.claster,a.r);return a;}
         b.neg();
         return a+b;
     }
 
-    extrabigint smart_multiplication(extrabigint a,extrabigint b){
+    extrabigint smart_multiplication(extrabigint a,extrabigint b){//умный самый
         int cpr=0;
         if(a.claster[a.r-1]<0)cpr++;
         if(b.claster[b.r-1]<0)cpr++;
@@ -233,7 +233,7 @@ private:
         
     }
 
-    char true_compare(extrabigint b){
+    char true_compare(extrabigint b){//истинный Компадро камбочо
         extrabigint a=*this;
         if(a.claster[a.r-1]>0&&b.claster[b.r-1]<0)return '>';
         if(a.claster[a.r-1]<0&&b.claster[b.r-1]>0)return '<';
@@ -262,7 +262,7 @@ private:
         }
     }
 
-    extrabigint div(long long b){
+    extrabigint div(long long b){//деление
         extrabigint a=*this,buff;
         int cpr=0;
         if(a.claster[0]<0)cpr++;
