@@ -1,3 +1,5 @@
+#ifndef EXTRABIGINT
+#define EXTRABIGINT
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -337,11 +339,4 @@ istream& operator>>(istream &in,extrabigint &ebi){
 long long& extrabigint::operator[] (const int index){
     return claster[(*this).r-1-(index%37)];
 }
-
-int main(){
-    extrabigint a;
-    a[0]=-872583477879;
-    a[1]=-4;
-    a[2]=-12345678901234567;
-    cout<<a[1];
-}
+#endif
