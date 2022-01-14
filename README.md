@@ -2,7 +2,7 @@
 ᴺᴱⱽᴱᴿ ᵁᔆᴱ ᴵᵀ ᴾᴸᔆ
 
 Презентация
-![a](https://user-images.githubusercontent.com/97752978/149560888-f9fe2e3f-1e73-41ee-944a-1df974590a95.png)
+/*![a](https://user-images.githubusercontent.com/97752978/149560888-f9fe2e3f-1e73-41ee-944a-1df974590a95.png)
 ![b](https://user-images.githubusercontent.com/97752978/149560893-2e625944-eb02-4637-bcdb-18e18683617d.png)
 ![c](https://user-images.githubusercontent.com/97752978/149560902-1a2b54a1-1256-4278-a1e6-b8cc1e08b03f.png)
 ![d](https://user-images.githubusercontent.com/97752978/149560907-f2cda4a3-5fc5-4ecc-b385-4c3a9df392ce.png)
@@ -23,4 +23,4 @@
 ![s](https://user-images.githubusercontent.com/97752978/149560983-b64a2af0-9420-43a7-be8e-4cd2645b1c6c.png)
 ![t](https://user-images.githubusercontent.com/97752978/149560984-dd164c2e-70b6-4657-9ab1-1ad398fbf9e0.png)
 ![u](https://user-images.githubusercontent.com/97752978/149560986-c6ad4f32-a310-429b-98f5-047ff24be8a5.png)
-![v](https://user-images.githubusercontent.com/97752978/149560988-9878f854-6c7f-4106-870a-b8a049dc1f47.png)
+![v](https://user-images.githubusercontent.com/97752978/149560988-9878f854-6c7f-4106-870a-b8a049dc1f47.png)*/
